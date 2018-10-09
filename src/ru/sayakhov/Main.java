@@ -35,6 +35,12 @@ public class Main {
         shopStore.productList.add(potato);
 
         shopStore.getProductList();
+        shopStore.getProducts();
+        shopStore.getProductQuantity(milk);
+
+        shopStore.setProductQuantity(milk,1000);
+
+        shopStore.getProductQuantity(milk);
 
     }
 }
