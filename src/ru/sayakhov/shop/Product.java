@@ -1,4 +1,4 @@
-package ru.sayakhov;
+package ru.sayakhov.shop;
 
 public class Product {
     private String name;
@@ -22,8 +22,9 @@ public class Product {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public int setQuantity(int quantity) {
         this.quantity = quantity;
+        return quantity;
     }
 
 

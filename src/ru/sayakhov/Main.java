@@ -1,4 +1,9 @@
 package ru.sayakhov;
+
+import ru.sayakhov.shop.Cart;
+import ru.sayakhov.shop.Product;
+import ru.sayakhov.shop.Store;
+
 /**
  *
  * Реализовать класс корзины интернет магазина по следующему интерфейсу:
@@ -29,18 +34,34 @@ public class Main {
 
         Store shopStore = new Store();
 
-        shopStore.productList.add(bread);
-        shopStore.productList.add(milk);
-        shopStore.productList.add(meet);
-        shopStore.productList.add(potato);
+        shopStore.addProductInStore(bread);
+        shopStore.addProductInStore(milk);
+        shopStore.addProductInStore(meet);
+        shopStore.addProductInStore(potato);
 
         shopStore.getProductList();
+        System.out.println("Выводим на экран только продукты на складе");
         shopStore.getProducts();
         shopStore.getProductQuantity(milk);
 
-        shopStore.setProductQuantity(milk,1000);
+        Cart cart = new Cart();
+        System.out.println("Проверяем пустая ли корзина: ");
+        cart.updateProductQuantityInCart();
+        // добавляем товар
+        cart.addProductFromStore(milk,5);
+        cart.addProductFromStore(potato,5);
+        cart.addProductFromStore(bread,1);
+        cart.addProductFromStore(bread,1);
+        cart.addProductFromStore(meet,4);
+        cart.addProductFromStore(meet,1);
 
-        shopStore.getProductQuantity(milk);
-
+        System.out.println("Проверяем уменьшилось ли на складе количество товарных запасов");
+        shopStore.getProductList();
+        System.out.println();
+        cart.updateProductQuantityInCart();
+        cart.getProductQuantityInCard(milk);
+        cart.clearCardProductList();
+        System.out.println("Cleaning cart");
+        cart.updateProductQuantityInCart();
     }
 }
