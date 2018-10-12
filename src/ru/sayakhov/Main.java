@@ -34,19 +34,21 @@ public class Main {
 
         Store shopStore = new Store();
 
-        shopStore.addProductInStore(bread);
+        shopStore.addProductInStore(bread); //добавление товара
         shopStore.addProductInStore(milk);
         shopStore.addProductInStore(meet);
         shopStore.addProductInStore(potato);
 
-        shopStore.getProductList();
+        shopStore.getProductList(); // получение списка товара
+        System.out.println();
         System.out.println("Выводим на экран только продукты на складе");
         shopStore.getProducts();
         shopStore.getProductQuantity(milk);
 
         Cart cart = new Cart();
+        System.out.println();
         System.out.println("Проверяем пустая ли корзина: ");
-        cart.updateProductQuantityInCart();
+        cart.updateProductQuantityInCart(); // обновление товара в корзине
         // добавляем товар
         cart.addProductFromStore(milk,5);
         cart.addProductFromStore(potato,5);
@@ -56,11 +58,17 @@ public class Main {
         cart.addProductFromStore(meet,1);
 
         System.out.println("Проверяем уменьшилось ли на складе количество товарных запасов");
-        shopStore.getProductList();
+        shopStore.getProductList(); // обновление товара на складе
         System.out.println();
         cart.updateProductQuantityInCart();
-        cart.getProductQuantityInCard(milk);
-        cart.clearCardProductList();
+        System.out.println();
+        cart.getProductQuantityInCard(milk); // получение количества товара по имени
+        cart.removeProductInCart(milk,6); // удаление из корзины большего количества чем есть
+        cart.removeProductInCart(milk,4); // удаление из корзины
+        cart.getProductQuantityInCard(milk); // получение количества товара по имени
+        cart.removeProductInCart(milk,1); // удаление из корзины
+        //cart.getProductQuantityInCard(milk); // получение количества товара по имени
+        cart.clearCardProductList();// очищение корзины
         System.out.println("Cleaning cart");
         cart.updateProductQuantityInCart();
     }
