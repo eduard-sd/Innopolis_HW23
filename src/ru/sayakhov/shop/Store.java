@@ -3,9 +3,8 @@ package ru.sayakhov.shop;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Store {
+public class Store implements PlusMinus {
     private ArrayList<Product> productList = new ArrayList<>(); //склад
-
     public Store() {
     }
 

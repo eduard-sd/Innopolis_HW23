@@ -33,7 +33,6 @@ public class Main {
         Product potato = new Product("Potato", 30);
 
         Store shopStore = new Store();
-
         shopStore.addProductInStore(bread); //добавление товара
         shopStore.addProductInStore(milk);
         shopStore.addProductInStore(meet);
@@ -48,7 +47,7 @@ public class Main {
         Cart cart = new Cart();
         System.out.println();
         System.out.println("Проверяем пустая ли корзина: ");
-        cart.updateProductQuantityInCart(); // обновление товара в корзине
+        cart.getProductsInCart(); // обновление товара в корзине
         // добавляем товар
         cart.addProductFromStore(milk,5);
         cart.addProductFromStore(potato,5);
@@ -60,16 +59,21 @@ public class Main {
         System.out.println("Проверяем уменьшилось ли на складе количество товарных запасов");
         shopStore.getProductList(); // обновление товара на складе
         System.out.println();
-        cart.updateProductQuantityInCart();
+        cart.getProductsInCart();
         System.out.println();
-        cart.getProductQuantityInCard(milk); // получение количества товара по имени
+        cart.getProductQuantityInCart(milk); // получение количества товара по имени
         cart.removeProductInCart(milk,6); // удаление из корзины большего количества чем есть
+        System.out.println("==========================================");
+        cart.getProductQuantityInCart(milk); // получение количества товара по имени
         cart.removeProductInCart(milk,4); // удаление из корзины
-        cart.getProductQuantityInCard(milk); // получение количества товара по имени
+        cart.getProductQuantityInCart(milk); // получение количества товара по имени
         cart.removeProductInCart(milk,1); // удаление из корзины
-        //cart.getProductQuantityInCard(milk); // получение количества товара по имени
+        cart.getProductQuantityInCart(milk); // получение количества товара по имени
+        cart.updateProductQuantityInCart(milk,10);
+        cart.getProductQuantityInCart(milk); // получение количества товара по имени
         cart.clearCardProductList();// очищение корзины
         System.out.println("Cleaning cart");
-        cart.updateProductQuantityInCart();
+        cart.getProductsInCart();
+
     }
 }
