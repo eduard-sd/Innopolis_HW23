@@ -3,15 +3,15 @@ package ru.sayakhov.shop;
 import java.util.List;
 
 public interface Basket {
-    void addProductFromStore(Product product, int quantity);
+    void addProduct(String product, int quantity);
 
-    void removeProductInCart(Product product, int quantity);
+    void removeProduct(String product);
 
-    void updateProductQuantityInCart(Product product, int quantity);
+    void updateProductQuantity(String product, int quantity);
 
-    void clearCardProductList();
+    void clear();
 
-    List<Product> getProductsInCart();
+    List<String> getProducts();
 
-    void getProductQuantityInCart(Product name);
+    int getProductQuantity(String product);
 }

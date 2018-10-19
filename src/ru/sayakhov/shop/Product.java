@@ -1,5 +1,6 @@
 package ru.sayakhov.shop;
 
+
 public class Product {
     private String name;
     private int quantity;
